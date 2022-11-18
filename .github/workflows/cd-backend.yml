@@ -1,0 +1,25 @@
+name: CD Bach-end
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: CI Workflow Main
+    uses: ./.github/workflows/ci-backend-main.yml
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    name: Deploy railway
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Instalação do clente Railway
+        run: npm install -g @railway/cli
+      - name: deploy
+        working-directory: back-end/
+        run: railway up --detach --service sgcm-elias
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
