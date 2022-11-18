@@ -1,4 +1,4 @@
-name: CD Bach-end
+name: CD Back-end
 
 on:
   workflow_dispatch:
