@@ -1,7 +1,7 @@
 name: CD front-end
 
 on: 
-  push:
+  workflow_dispatch:
 
 jobs: 
   deploy:
