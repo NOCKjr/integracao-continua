@@ -18,7 +18,7 @@ public class FiltroCors {
         corsConfig.setAllowCredentials(true);
         corsConfig.setAllowedOrigins(
             Arrays.asList(
-                "sgcm-eliasnoc-production-a8f2.up.railway.app")
+                "sgcm-eliasnoc2-production.up.railway.app")
         );
         corsConfig.setAllowedMethods(Arrays.asList("*"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
