@@ -24,6 +24,6 @@ jobs:
       - name: Cópia do arquivo netlify.toml
         run: cp front-end/netlify.toml front-end/dist/sgcmapp/
       - name: Instalação do clente Netlify
-        run: npm install -g netlify/cli
+        run: npm install -g netlify-cli
       - name: deploy
         run: netlify deploy --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --dir=front-end/dist/sgcmapp --site=${{ secrets.NETLIFY-SITE-ID }} --prod
